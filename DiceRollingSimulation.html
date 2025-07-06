@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice rolling simulation using html</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @media only screen and (max-width: 375px) {
+        .header {
+          margin: 2%;
+        }
+      }
+      body {
+        background-color: rgb(81, 137, 81);
+        color: white;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        /* padding: 20px; */
+        margin: 10px;
+        font-size: 55px;
+        font-family: "Bitcount Grid Double", system-ui;
+        font-weight: 300;
+        font-style: normal;
+        position: sticky;
+        top: 0;
+      }
+      .header {
+        margin: auto;
+        padding: 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 55px rgb(189, 243, 189);
+      }
+
+      .header1:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .button {
+        border: 1px solid rgb(0, 0, 0);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 20px;
+        padding: 20px;
+        width: 135px;
+        text-align: center;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px darkgreen;
+        font-family: "Bitcount Grid Double", system-ui;
+        font-style: normal;
+      }
+
+      .button1:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .footer {
+        height: auto;
+        margin-top: 40px;
+        padding: 20px;
+        text-align: end;
+        font-size: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        text-align: start;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .dice {
+        font-size: 100px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      main {
+        padding: 150px;
+        margin-bottom: 0%;
+      }
+
+      p {
+        line-height: 48px;
+        word-spacing: 4px;
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <div class="header header1">Dice rolling simulation</div>
+    </nav>
+
+    <main>
+      <div class="dice" id="dice">🎲</div>
+      <div class="button button1" id="rollButton">Roll Dice</div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <h3>About us</h3>
+        <p>
+          This mini-project is made by Ashita Wairagade and Prasheek Wankhede
+          from data science branch from J.D.College of Engineering and
+          Management. This is a simple Dice Rolling Simulation using HTML, CSS
+          and JavaScript. It generates a random number from the dice each time
+          you click the button.
+        </p>
+
+        <p class="extrainfo">
+          This mini-project was guided by <br />-Prof. Harshwardhan Kulkarni
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("rollButton")
+        .addEventListener("click", function () {
+          const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+          const randomNumber = Math.floor(Math.random() * 6) + 1;
+          document.getElementById("dice").textContent = diceFaces[randomNumber];
+        });
+    </script>
+  </body>
+</html>
